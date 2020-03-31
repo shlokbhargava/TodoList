@@ -1,0 +1,26 @@
+body{
+    background-color: azure;
+}
+
+.container{
+    padding: 20px;
+}
+
+.input{
+    height: 10vh auto;
+    border-radius: 0;
+}
+
+.btn{
+    border-radius: 0;
+    height: 10vh auto;
+    width: 10vw auto;
+}
+
+.display-task{
+    font-size: 22px;
+    border: 1px solid lightgray;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
