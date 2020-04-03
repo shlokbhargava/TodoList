@@ -17,10 +17,33 @@ body{
     width: 10vw auto;
 }
 
-.display-task{
+.list-item{
+    list-style: none;
+}
+
+.button-box{
+    text-align: center;
+}
+
+.display-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     font-size: 22px;
-    border: 1px solid lightgray;
-    border-bottom: 0px;
-    border-left: 0px;
-    border-right: 0px;
+    left: -6%;
+    border-top: 1px solid lightgray;
+}
+
+.delete-button{
+    color: red;
+    font-size: large;
+}
+
+small{
+    color: rgb(104, 101, 101);
+}
+
+label{
+    font-family: Georgia;
 }

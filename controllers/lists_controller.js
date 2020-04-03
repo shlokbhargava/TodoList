@@ -1,16 +1,16 @@
-var task = [
-    {
-        description: "Take a flight",
-    },
-    {
-        description: "Buy vegetables",
-    },
-]
+const TaskList = require('../models/list');
 
-module.exports.lists = function(request, response){
-
-    return response.render('list', {
-        title: "Todo List",
-        task: task
+module.exports.tasks = function(request, response){
+    
+    TaskList.create({
+        description: request.body.description,
+        category: request.body.category,
+        date: request.body.date
+    },function(err, newTask){
+        if(err){
+            console.log('error in creating a contact');
+            return;
+        }
+        return response.render('back');
     });
 }
