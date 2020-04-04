@@ -21,63 +21,45 @@
     <!-- Adding a Task to the list -->
 
     <div class="container">
+        <h1><%= title %></h1>
         <form action="/create-task" method="POST" id="form">
+            
             <div class="row">
-                <!-- For xs screen -->
-
-                <div class="col-12 d-xs-block d-sm-none mb-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="description" placeholder="DESCRIPTION">
-                        <div class="input-group-append">
-                            <button type="submit" class="btn btn-outline-success">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                            <button type="reset" class="btn btn-outline-secondary">
-                                <i class="fas fa-redo"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- For sm - xl screen -->
-
-                <div class="col-sm-6 offset-sm-3 d-none d-sm-block d-xs-none mb-3">
+                <div class="col-12 col-sm-6 offset-sm-3 mb-3">
                     <input class="form-control input" type="text" name="description" placeholder="DESCRIPTION" required/>
                 </div>
             </div>
-
-            <!-- For all screen sizes -->
 
             <div class="row">
                 <div class="col-6 col-sm-3 offset-sm-3 mb-3">  
                     <select name="category" id="" class="form-control input" type="text" required>
                         <option selected>Choose a Category</option>
-                        <option value="">School</option>
-                        <option value="">University</option>
-                        <option value="">Work</option>
-                        <option value="">Household</option>
+                        <option value="School">School</option>
+                        <option value="University">University</option>
+                        <option value="Work">Work</option>
+                        <option value="Household">Household</option>
                     </select>
                 </div>
                 <div class="col-6 col-sm-3 offset-0 mb-3">
                     <input type="date" class="form-control input" name="date" required>
                 </div>
             </div>
-            
-            <!-- Buttons for sm - xl screen -->
+        
 
-                <div class="container button-box d-none d-sm-block d-xs-none">
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-plus"></i>   &nbsp;
-                        ADD TASK
-                    </button>
-                    <button type="reset" class="btn btn-secondary">
-                        <i class="fas fa-redo"></i>  &nbsp;
-                        CLEAR ALL
-                    </button>
-                </div>
+            <div class="container button-box">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-plus"></i>   &nbsp;
+                    ADD TASK
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                    <i class="fas fa-redo"></i>  &nbsp;
+                    CLEAR ALL
+                </button>
+            </div>
             
         </form>
     </div>
+
     
     <!-- Displaying Task List -->
 
@@ -89,15 +71,17 @@
                             <div class="form-check display-flex">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label">&nbsp;
-                                    <!-- <%= i.description %></> -->
+                                    <%= i.description %></>
                                     <div>
                                         <small><i class="fas fa-calendar"></i> &nbsp;<%= i.date %></> &nbsp; |</small>
                                         <small><%= i.category %></></small>&nbsp;&nbsp;
                                     </div>
                                 </label>
-                                <button type="submit" class="btn delete-button">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                <a href="/delete-task/?id=<%= i._id %>">
+                                    <button type="submit" class="btn delete-button">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>    

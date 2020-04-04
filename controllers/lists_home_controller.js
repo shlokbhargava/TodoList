@@ -1,4 +1,4 @@
-const TaskList = require('../models/list');
+const TaskList = require('../models/lists');
 
 module.exports.lists = function(request, response){
 
@@ -10,7 +10,7 @@ module.exports.lists = function(request, response){
         }
        
         return response.render('list', {
-            title: "Todo List",
+            title: "TodoList",
             task: task
         });
 

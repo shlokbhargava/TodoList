@@ -2,27 +2,46 @@ body{
     background-color: azure;
 }
 
+
 .container{
     padding: 20px;
 }
 
+
+/* Heading */
+h1{
+    text-align: center;
+    color: rgba(161, 60, 60, 0.932);
+}
+
+
+/* All input fields */
 .input{
     height: 10vh auto;
     border-radius: 0;
 }
 
+
+/* Buttons */
 .btn{
     border-radius: 0;
     height: 10vh auto;
     width: 10vw auto;
 }
 
-.list-item{
-    list-style: none;
-}
-
 .button-box{
     text-align: center;
+}
+
+.delete-button{
+    color: red;
+    font-size: large;
+}
+
+
+/* Task List */
+.list-item{
+    list-style: none;
 }
 
 .display-flex{
@@ -35,15 +54,27 @@ body{
     border-top: 1px solid lightgray;
 }
 
-.delete-button{
-    color: red;
-    font-size: large;
+label{
+    font-family: Georgia;
 }
 
 small{
     color: rgb(104, 101, 101);
 }
 
-label{
-    font-family: Georgia;
+
+/* Media Query */
+
+@media (orientation: landscape) and (max-width: 823px) and (max-height: 414px) and (min-width: 569px){
+    .display-flex{
+        width: 85vw;
+        left: -105%;
+    }  
+}
+
+@media (orientation: portrait) and (max-width: 1023px) and (min-width: 768px){
+    .display-flex{
+        width: 85vw;
+        left: -105%;
+    }  
 }

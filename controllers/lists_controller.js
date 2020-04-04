@@ -1,4 +1,4 @@
-const TaskList = require('../models/list');
+const TaskList = require('../models/lists');
 
 module.exports.tasks = function(request, response){
     
@@ -6,11 +6,12 @@ module.exports.tasks = function(request, response){
         description: request.body.description,
         category: request.body.category,
         date: request.body.date
-    },function(err, newTask){
+    }, function(err){
         if(err){
-            console.log('error in creating a contact');
+            console.log('error in creating a task');
             return;
         }
-        return response.render('back');
+        
+        return response.redirect('back');
     });
 }

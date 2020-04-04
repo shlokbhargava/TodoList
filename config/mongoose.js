@@ -1,11 +1,18 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/todolist_task_db');
+//  connect to the database
+mongoose.connect('mongodb://localhost/todo_list_db');
 
-const db = mongoose.connection;
+// acquire the connection (to check if it is successful)
+const dataBase = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'error connecting to db'));
+// error
+dataBase.on('error', console.error.bind(console, 'error connecting to db'));
 
-db.once('open', function(){
+// up and running
+dataBase.once('open', function(){
     console.log('Successfully connected to the database');
 });
+
+
+module.exports = dataBase;
